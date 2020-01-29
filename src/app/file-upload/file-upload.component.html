@@ -1,0 +1,8 @@
+<form [formGroup]="fg" (ngSubmit)="submit()">
+    <br><br>
+    <label for="name" [innerText]="'name'"></label>
+    <input type="text" formControlName="name" name="name"/><br>
+    <label for="upload" [innerText]="'upload'"></label>
+    <input type="file" formControlName="fileUpload" name="fileUpload" (change)="selectFile($event)"/> <br> <br>
+    <input type="submit" value="upload"/>
+</form>

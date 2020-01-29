@@ -15,12 +15,19 @@ import { AppTableComponent } from './app-table/app-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { StoreModule } from '@ngrx/store';
+import { SampleReducer } from './reducer/sample.reducer';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavComponent,
-    AppTableComponent
+    AppTableComponent,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,11 @@ import { MatSortModule } from '@angular/material/sort';
     MatListModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    StoreModule.forRoot({text : SampleReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
